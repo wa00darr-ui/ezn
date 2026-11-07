@@ -1,0 +1,27 @@
+.page-intro {
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0 40px;
+}
+.page-intro h1 {
+  font-size: 36px;
+  line-height: 1.5;
+  font-weight: 600;
+  margin: 8px 0 12px;
+}
+.page-intro p {
+  max-width: 680px;
+}
+@media (max-width: 720px) {
+  .page-intro {
+    padding: 22px 0 28px;
+  }
+  .page-intro h1 {
+    font-size: 28px;
+  }
+  .page-intro p {
+    font-size: 14px;
+  }
+}
+

@@ -1,0 +1,39 @@
+.btn {
+  border: 1px solid var(--green);
+  border-radius: 8px;
+  padding: 13px 25px;
+  background: var(--green);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+.btn:hover {
+  background: #083e31;
+  transform: translateY(-1px);
+}
+.btn.small {
+  padding: 9px 22px;
+  font-size: 14px;
+}
+.btn.secondary {
+  background: white;
+  color: var(--green);
+  border-color: #d5dfda;
+}
+.text-btn {
+  border: 0;
+  background: transparent;
+  color: var(--green);
+  padding: 5px;
+  font-size: 14px;
+}
+.menu {
+  display: none;
+  border: 0;
+  background: none;
+  font-size: 24px;
+}

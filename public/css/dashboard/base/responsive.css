@@ -1,0 +1,479 @@
+@media (min-width: 1600px) {
+  :root {
+    --sidebar: 274px;
+  }
+  main#main {
+    padding: 35px 45px;
+  }
+  .sidebar nav a {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  .kpi strong {
+    font-size: 37px;
+  }
+}
+@media (max-width: 1200px) {
+  :root {
+    --sidebar: 230px;
+  }
+  .sidebar {
+    padding: 24px 13px 0;
+  }
+  .sidebar nav a {
+    font-size: 12px;
+    padding: 10px;
+  }
+  .topbar {
+    padding: 0 24px;
+  }
+  .today {
+    display: none;
+  }
+  main#main {
+    padding: 26px 24px;
+  }
+  .kpi-grid {
+    gap: 10px;
+  }
+  .kpi {
+    padding: 16px 12px;
+  }
+  .kpi-top {
+    font-size: 11px;
+  }
+  .kpi small {
+    font-size: 9px;
+  }
+  .distribution {
+    gap: 16px;
+  }
+  .donut {
+    width: 140px;
+    height: 140px;
+  }
+  .donut > div {
+    width: 100px;
+    height: 100px;
+  }
+  .detail-layout {
+    grid-template-columns: 1fr;
+  }
+  .detail-layout > aside {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .detail-main .two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cms-layout {
+    grid-template-columns: minmax(0, 1fr) 245px;
+  }
+  .checkout-layout {
+    grid-template-columns: 320px 1fr;
+  }
+  .checkout-placeholder {
+    padding: 50px 23px;
+  }
+  .login-brand {
+    padding: 40px;
+  }
+  .login-brand h1 {
+    font-size: 37px;
+  }
+  .page-actions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 1000px) {
+  :root {
+    --sidebar: 0px;
+  }
+  .sidebar {
+    width: 250px;
+    transform: translateX(100%);
+    transition: transform 0.2s;
+  }
+  .nav-open .sidebar {
+    transform: translateX(0);
+  }
+  .mobile-toggle {
+    display: inline-grid;
+  }
+  .topbar {
+    height: 72px;
+  }
+  .kpi-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .kpi-grid.four {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .kpi strong {
+    font-size: 30px;
+  }
+  .two-col {
+    gap: 18px;
+  }
+  .welcome {
+    padding: 25px;
+  }
+  .welcome-symbol {
+    padding: 0 15px;
+  }
+  .login-brand {
+    padding: 35px;
+  }
+  .login-brand h1 {
+    font-size: 30px;
+  }
+  .login-content {
+    padding: 35px;
+  }
+  .sidebar-backdrop {
+    display: block;
+  }
+  html:not(.js) .sidebar {
+    position: static;
+    transform: none;
+    width: 100%;
+    padding-bottom: 15px;
+  }
+  html:not(.js) .sidebar nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  html:not(.js) .sidebar-bottom,
+  html:not(.js) .school-switch,
+  html:not(.js) .nav-label {
+    display: none;
+  }
+}
+@media (max-width: 720px) {
+  body {
+    font-size: 13px;
+  }
+  main#main {
+    padding: 22px 16px;
+  }
+  .topbar {
+    padding: 0 16px;
+    gap: 8px;
+  }
+  .topbar-title > span {
+    font-size: 10px;
+  }
+  .topbar-title .muted {
+    margin: 0 4px;
+  }
+  .topbar-actions {
+    gap: 10px;
+  }
+  .profile summary > span:not(.avatar) {
+    display: none;
+  }
+  .profile .avatar {
+    width: 30px;
+    height: 30px;
+  }
+  .notification-trigger .icon {
+    width: 20px;
+  }
+  .dropdown-panel {
+    position: fixed;
+    top: 70px;
+    left: 16px;
+    right: auto;
+    max-width: calc(100vw - 32px);
+  }
+  .page-heading {
+    align-items: flex-start;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .page-actions {
+    justify-content: flex-start;
+    width: 100%;
+    gap: 8px;
+  }
+  .page-heading h1 {
+    font-size: 24px;
+  }
+  .page-description {
+    font-size: 12px;
+  }
+  .welcome {
+    padding: 24px 22px;
+  }
+  .welcome h2 {
+    font-size: 23px;
+  }
+  .welcome p {
+    font-size: 12px;
+  }
+  .welcome-symbol {
+    display: none;
+  }
+  .welcome .eyebrow {
+    font-size: 10px;
+  }
+  .kpi-grid,
+  .kpi-grid.four {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .kpi-grid .kpi:last-child:nth-child(odd) {
+    grid-column: 1/-1;
+  }
+  .kpi-top {
+    font-size: 12px;
+  }
+  .kpi small {
+    font-size: 10px;
+  }
+  .two-col,
+  .two-col.wide-first,
+  .checkout-layout,
+  .cms-layout,
+  .detail-main .two-col {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .panel {
+    margin-bottom: 18px;
+  }
+  .panel-head {
+    padding: 18px 16px;
+  }
+  .panel-head h2 {
+    font-size: 15px;
+  }
+  .panel-head > .text-link {
+    font-size: 10px;
+  }
+  .filters {
+    padding: 0 16px 18px;
+    gap: 12px;
+  }
+  .field {
+    min-width: calc(50% - 10px);
+  }
+  .search-field {
+    min-width: 100%;
+  }
+  .filters > .btn {
+    flex: 1;
+  }
+  .pagination {
+    padding: 13px 16px;
+    flex-wrap: wrap;
+  }
+  .pagination > div {
+    gap: 8px;
+  }
+  .pagination .btn {
+    font-size: 10px;
+  }
+  th,
+  td {
+    padding: 13px 16px;
+  }
+  .data-grid {
+    padding: 0 16px 20px;
+    gap: 17px;
+  }
+  .data-grid dd {
+    font-size: 12px;
+  }
+  .record-banner {
+    padding: 20px;
+    align-items: start;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .record-banner h2 {
+    font-size: 19px;
+  }
+  .record-banner p {
+    font-size: 10px;
+  }
+  .detail-layout {
+    gap: 0;
+  }
+  .detail-layout > aside {
+    display: block;
+  }
+  .decision-bar {
+    position: static;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px;
+  }
+  .decision-bar > div:last-child {
+    display: flex;
+  }
+  .decision-bar .btn {
+    flex: 1;
+    font-size: 11px;
+    padding: 10px;
+  }
+  .decision-bar small {
+    font-size: 10px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .field.full {
+    grid-column: auto;
+  }
+  .panel > .form-grid {
+    padding: 0 16px 20px;
+  }
+  .checkout-placeholder {
+    min-height: 0;
+    padding: 30px 25px;
+  }
+  .checkout-layout .scanner-panel {
+    order: 0;
+  }
+  .checkout-result .student-hero {
+    padding: 20px 16px;
+  }
+  .student-hero h2 {
+    font-size: 17px;
+  }
+  .checkout-success {
+    padding: 28px 20px;
+  }
+  .checkout-success > .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .tabs button {
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+  .period-tabs {
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .report-filter .tabs {
+    padding: 5px 10px 0;
+  }
+  .report-filter .tabs button {
+    padding: 10px;
+    font-size: 11px;
+  }
+  .report-filter .filters {
+    padding: 0 16px 16px;
+  }
+  .rank-bars {
+    padding: 0 18px 20px;
+  }
+  .new-request {
+    flex-wrap: wrap;
+  }
+  .new-request .btn {
+    margin-inline-start: 30px;
+  }
+  .reason-list {
+    padding: 0 16px 18px;
+  }
+  .reason-list li {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .reason-actions {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 14px;
+  }
+  .reason-list b {
+    flex: 1;
+  }
+  .reason-actions .icon-btn {
+    height: 28px;
+    min-width: 28px;
+  }
+  .sticky-panel {
+    position: static;
+  }
+  .admin-footer {
+    padding: 18px 16px;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+  .login-layout {
+    grid-template-columns: 1fr;
+  }
+  .login-brand {
+    padding: 25px;
+  }
+  .login-brand > div,
+  .login-brand > small {
+    display: none;
+  }
+  .login-brand .brand {
+    font-size: 26px;
+  }
+  .login-brand .brand-mark {
+    width: 42px;
+    height: 44px;
+  }
+  .login-content {
+    padding: 34px 25px;
+  }
+  .login-school {
+    margin-bottom: 26px;
+  }
+  .login-card {
+    max-width: 400px;
+  }
+  .login-school .school-icon {
+    display: none;
+  }
+  .login-card h2 {
+    font-size: 25px;
+  }
+  .mini-header {
+    flex-direction: column;
+  }
+  .site-preview section {
+    padding: 20px;
+  }
+  .site-preview section h2 {
+    font-size: 22px;
+  }
+  .sidebar {
+    width: 260px;
+  }
+  .sidebar nav a {
+    font-size: 13px;
+    padding: 11px;
+  }
+  .dialog-head h2 {
+    font-size: 20px;
+  }
+  dialog {
+    padding: 22px;
+  }
+  .notice {
+    font-size: 11px;
+  }
+  html:not(.js) .sidebar nav {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

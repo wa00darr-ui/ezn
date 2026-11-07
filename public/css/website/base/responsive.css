@@ -1,0 +1,356 @@
+@media (max-width: 1000px) {
+  .hero-grid {
+    gap: 38px;
+  }
+  .hero h1 {
+    font-size: 42px;
+  }
+  nav {
+    gap: 18px;
+  }
+  .track-link {
+    display: none;
+  }
+  .visual img {
+    height: 350px;
+  }
+  .visual {
+    min-height: 350px;
+  }
+  .hero-proof {
+    gap: 14px;
+  }
+  .notice ul {
+    gap: 20px;
+  }
+  .foot {
+    flex-wrap: wrap;
+  }
+  .form-layout {
+    grid-template-columns: 210px 1fr;
+  }
+}
+@media (max-width: 720px) {
+  .wrap {
+    width: calc(100% - 36px);
+  }
+  .topline {
+    font-size: 10px;
+  }
+  .topline .wrap > span:first-child {
+    display: none;
+  }
+  .topline .wrap {
+    justify-content: center;
+  }
+  header {
+    height: 82px;
+    gap: 10px;
+  }
+  .brand b {
+    font-size: 14px;
+  }
+  .brand small {
+    font-size: 9px;
+  }
+  .mark {
+    width: 39px;
+    height: 44px;
+  }
+  .mark svg {
+    width: 32px;
+  }
+  .header-actions {
+    gap: 8px;
+  }
+  .header-actions .btn {
+    padding: 7px 13px;
+    font-size: 12px;
+  }
+  .menu {
+    display: block;
+  }
+  nav {
+    display: none;
+    position: absolute;
+    top: 112px;
+    right: 0;
+    left: 0;
+    background: white;
+    padding: 20px;
+    z-index: 10;
+    box-shadow: 0 10px 20px #163d3210;
+  }
+  nav.open {
+    display: flex;
+    justify-content: center;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    padding: 32px 0 40px;
+    gap: 32px;
+  }
+  .hero h1 {
+    font-size: 38px;
+    margin: 12px 0;
+  }
+  .hero p {
+    font-size: 15px;
+    max-width: none;
+    margin-bottom: 22px;
+  }
+  .hero .eyebrow {
+    font-size: 12px;
+  }
+  .hero-buttons .btn {
+    flex: 1;
+    font-size: 14px;
+    padding: 12px;
+  }
+  .hero-proof {
+    font-size: 12px;
+    margin-top: 18px;
+    justify-content: space-between;
+  }
+  .visual {
+    min-height: 270px;
+    margin: 0 10px 0 0;
+  }
+  .visual img {
+    height: 270px;
+    border-radius: 65px 10px 10px 10px;
+  }
+  .visual:before {
+    inset: 12px -10px -10px 12px;
+    border-radius: 65px 10px 10px 10px;
+  }
+  .float-card {
+    right: -12px;
+    top: 20px;
+    padding: 11px 14px;
+  }
+  .float-card b {
+    font-size: 12px;
+  }
+  .float-card small {
+    font-size: 10px;
+  }
+  .image-tag {
+    font-size: 11px;
+    left: 15px;
+    bottom: 20px;
+  }
+  .service-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 11px;
+    gap: 15px;
+    padding: 22px 0;
+  }
+  .service-strip span {
+    gap: 7px;
+  }
+  .service-strip .icon {
+    width: 18px;
+  }
+  .section-head {
+    margin-bottom: 30px;
+  }
+  section.section {
+    padding: 45px 0;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  .section-head p {
+    font-size: 14px;
+  }
+  .steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 18px;
+  }
+  .step-card h3 {
+    font-size: 14px;
+  }
+  .step-card p {
+    font-size: 12px;
+  }
+  .step-icon {
+    margin-bottom: 14px;
+  }
+  .service-panel {
+    grid-template-columns: 1fr;
+  }
+  .service-copy {
+    padding: 28px;
+  }
+  .service-copy h2 {
+    font-size: 25px;
+  }
+  .service-features {
+    padding: 10px 28px 30px;
+    gap: 20px;
+  }
+  .notice {
+    padding: 20px;
+    gap: 12px;
+  }
+  .notice ul {
+    display: block;
+    font-size: 13px;
+  }
+  .notice li {
+    margin-bottom: 8px;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .contact-items {
+    gap: 20px 12px;
+  }
+  .contact-item {
+    gap: 8px;
+  }
+  .contact-item b {
+    font-size: 13px;
+  }
+  .contact-item small {
+    font-size: 11px;
+  }
+  .foot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .foot .brand b {
+    font-size: 16px;
+  }
+  .foot > small {
+    font-size: 11px;
+  }
+  .page-bg {
+    padding: 20px 0 40px;
+  }
+  .form-title h1 {
+    font-size: 25px;
+  }
+  .privacy-pill {
+    display: none;
+  }
+  .form-layout {
+    display: block;
+  }
+  .progress-panel {
+    display: flex;
+    padding: 15px 8px;
+    margin-bottom: 18px;
+    justify-content: space-around;
+  }
+  .progress-step {
+    display: block;
+    padding: 0;
+    text-align: center;
+    flex: 1;
+  }
+  .progress-step > span {
+    margin: 0 auto 5px;
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+  .progress-step b {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    display: block;
+  }
+  .progress-step small,
+  .help-card,
+  .progress-step:before {
+    display: none;
+  }
+  .card-head {
+    padding: 22px;
+  }
+  .card-head h2 {
+    font-size: 21px;
+  }
+  .card-head p {
+    font-size: 12px;
+  }
+  .card-body {
+    padding: 22px;
+  }
+  .fields {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+  .card-actions {
+    padding: 18px;
+    flex-wrap: wrap;
+  }
+  .card-actions .btn {
+    font-size: 13px;
+    padding: 11px 17px;
+  }
+  .card-actions .demo-fill {
+    font-size: 11px;
+  }
+  .summary-grid {
+    gap: 16px;
+  }
+  .summary-grid b,
+  .summary-grid time {
+    font-size: 13px;
+  }
+  .summary-grid small {
+    font-size: 11px;
+  }
+  .status-banner h2 {
+    font-size: 22px;
+  }
+  .timeline {
+    padding: 25px 0;
+    gap: 3px;
+  }
+  .timeline > div {
+    font-size: 10px;
+  }
+  .pickup {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 20px;
+  }
+  .review-media img {
+    max-width: 100%;
+  }
+  .demo-panel {
+    padding: 15px;
+  }
+  .breadcrumb {
+    font-size: 12px;
+  }
+  .form-title {
+    margin-bottom: 20px;
+  }
+  dialog {
+    padding: 24px;
+  }
+  .contact-item .icon {
+    width: 18px;
+  }
+  .hero-proof .icon {
+    width: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Dedicated informational pages share the approved homepage design tokens. */

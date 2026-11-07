@@ -1,0 +1,207 @@
+.track-shell {
+  max-width: 900px;
+  margin: auto;
+}
+.status-banner {
+  text-align: center;
+  padding: 34px 25px;
+  border-bottom: 1px solid var(--line);
+  background: #fffdf5;
+}
+.status-banner.approved,
+.status-banner.completed {
+  background: #f1f7ef;
+}
+.status-banner.rejected {
+  background: #fdf4f3;
+}
+.status-icon {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 13px;
+  background: #f6ebbf;
+  color: var(--gold);
+  font-size: 27px;
+}
+.approved .status-icon,
+.completed .status-icon {
+  background: #dcebd8;
+  color: var(--green);
+}
+.rejected .status-icon {
+  background: #f4dedd;
+  color: var(--red);
+}
+.status-banner h2 {
+  font-size: 26px;
+}
+.status-banner p {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 570px;
+  margin: 0 auto;
+}
+.badge {
+  display: inline-block;
+  border-radius: 30px;
+  background: #f5edcf;
+  color: #806220;
+  font-size: 12px;
+  padding: 3px 12px;
+  margin-top: 15px;
+}
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 15px;
+  gap: 10px;
+}
+.timeline > div {
+  text-align: center;
+  flex: 1;
+  font-size: 12px;
+  position: relative;
+}
+.timeline > div:before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: #dce5dd;
+  width: 100%;
+  top: 17px;
+  right: 50%;
+}
+.timeline > div:first-child:before {
+  display: none;
+}
+.timeline span {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #dce5dd;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: white;
+  margin: 0 auto 9px;
+  position: relative;
+  color: #809287;
+}
+.timeline .done span {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+}
+.pickup {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 25px 0;
+}
+.qr {
+  width: 140px;
+  height: 140px;
+  flex: none;
+  background: white;
+  padding: 8px;
+}
+.pickup-code {
+  font-size: 32px;
+  letter-spacing: 7px;
+  direction: ltr;
+  color: var(--green);
+  font-weight: 600;
+}
+.pickup p {
+  font-size: 14px;
+  color: var(--muted);
+}
+.pickup.used {
+  background: #f6f7f6;
+}
+.pickup.used .qr {
+  opacity: 0.25;
+}
+.pickup.used .pickup-code {
+  text-decoration: line-through;
+  color: #8e9992;
+}
+.whatsapp {
+  background: #f0f7ee;
+  border: 1px solid #dde9d8;
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 14px;
+  display: flex;
+  gap: 13px;
+}
+.whatsapp small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+.demo-panel {
+  border: 1px dashed #bdcbbf;
+  border-radius: 10px;
+  padding: 17px 20px;
+  margin-top: 22px;
+  background: #fff;
+}
+.demo-panel summary {
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--muted);
+}
+.demo-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+.demo-controls button {
+  border: 1px solid var(--line);
+  background: #f6f8f5;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 12px;
+  color: var(--ink);
+}
+.demo-controls button.selected {
+  background: var(--green);
+  color: white;
+}
+.demo-note {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 12px 0 0;
+}
+.error-box {
+  background: #fdf2f1;
+  border: 1px solid #efd6d2;
+  color: var(--red);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #aec0b5;
+  border-top-color: var(--green);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+  margin-left: 7px;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

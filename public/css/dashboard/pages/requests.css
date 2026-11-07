@@ -1,0 +1,135 @@
+.detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 275px;
+  gap: 24px;
+}
+.detail-main {
+  min-width: 0;
+}
+.detail-main .two-col {
+  gap: 20px;
+}
+.data-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 21px 20px;
+  padding: 0 22px 24px;
+  margin: 0;
+}
+.data-grid dt {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.data-grid dd {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.data-grid a {
+  color: var(--green);
+}
+.identity-image {
+  display: block;
+  width: calc(100% - 44px);
+  height: 170px;
+  object-fit: contain;
+  background: #f3f7ee;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin: 0 22px 14px;
+}
+.identity-image.large {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.identity-image.small {
+  height: 150px;
+  width: calc(100% - 44px);
+}
+.image-button {
+  border: 0;
+  background: none;
+  width: 100%;
+  padding: 0;
+  cursor: zoom-in;
+}
+.signature-image {
+  display: block;
+  width: calc(100% - 44px);
+  height: 120px;
+  object-fit: contain;
+  margin: 0 22px 15px;
+}
+.vertical-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 30px 23px 22px;
+}
+.vertical-timeline li {
+  position: relative;
+  border-inline-start: 1px solid #dfe7dd;
+  margin-inline-start: 2px;
+  padding: 0 21px 27px 0;
+  color: #8a978f;
+}
+.vertical-timeline li:last-child {
+  padding-bottom: 0;
+  border-color: transparent;
+}
+.vertical-timeline li:before {
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  background: #dbe3d9;
+  border: 2px solid white;
+  border-radius: 50%;
+  box-sizing: content-box;
+}
+.vertical-timeline .done:before {
+  background: var(--green);
+}
+.vertical-timeline .done b {
+  color: var(--green);
+}
+.vertical-timeline b {
+  font-size: 12px;
+}
+.vertical-timeline p,
+.vertical-timeline time {
+  font-size: 10px;
+  display: block;
+}
+.decision-bar {
+  position: sticky;
+  bottom: 16px;
+  background: var(--deep);
+  border-radius: 11px;
+  padding: 18px 24px;
+  box-shadow: 0 8px 25px #173c3020;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  z-index: 15;
+}
+.decision-bar small {
+  display: block;
+  font-size: 11px;
+  color: #b9cbbf;
+}
+.decision-bar > div:last-child {
+  display: flex;
+  gap: 10px;
+}
+.decision-bar .btn:not(.secondary) {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: var(--deep);
+}

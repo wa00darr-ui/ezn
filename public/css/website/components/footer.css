@@ -1,0 +1,19 @@
+footer {
+  border-top: 1px solid var(--line);
+  padding: 30px 0;
+}
+.foot {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+.foot > div {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+.foot > small {
+  font-size: 12px;
+  color: var(--muted);
+}

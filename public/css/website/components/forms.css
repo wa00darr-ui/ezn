@@ -1,0 +1,103 @@
+.form-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.card-head {
+  padding: 26px 32px;
+  border-bottom: 1px solid var(--line);
+}
+.card-head h2 {
+  font-size: 23px;
+  margin: 0 0 3px;
+}
+.card-head p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+.card-body {
+  padding: 28px 32px;
+}
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.field.full {
+  grid-column: 1/-1;
+}
+.field label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+.required {
+  color: var(--red);
+  margin-right: 4px;
+}
+input:not([type="checkbox"]),
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #dbe3de;
+  background: white;
+  border-radius: 7px;
+  padding: 11px 13px;
+  color: var(--ink);
+  min-height: 48px;
+  outline: none;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px #10564612;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #a0aaa5;
+  font-size: 14px;
+}
+.field small {
+  font-size: 12px;
+  color: var(--muted);
+}
+.error {
+  color: var(--red);
+  font-size: 13px;
+  margin-top: 5px;
+}
+.invalid {
+  border-color: var(--red) !important;
+}
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  padding: 22px 32px;
+  gap: 12px;
+}
+.card-actions > div {
+  display: flex;
+  gap: 10px;
+}
+.hint {
+  background: #f5f8f3;
+  border-radius: 7px;
+  padding: 13px 16px;
+  font-size: 13px;
+  color: #617562;
+  margin-top: 24px;
+}
+.demo-fill {
+  font-size: 13px;
+  color: var(--green);
+  background: none;
+  border: 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

@@ -1,0 +1,52 @@
+.person-link {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.person-link .avatar {
+  font-size: 13px;
+  height: 32px;
+  width: 32px;
+}
+.upload-zone {
+  border: 1px dashed #bdceb7;
+  border-radius: 9px;
+  background: #f8faf5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  gap: 12px;
+  font-size: 13px;
+  margin-top: 20px;
+}
+.upload-zone input {
+  max-width: 100%;
+}
+.tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 22px;
+}
+.tabs button {
+  border: 0;
+  background: none;
+  color: var(--muted);
+  padding: 12px 20px;
+  border-bottom: 2px solid transparent;
+  font-size: 13px;
+}
+.tabs button[aria-selected="true"],
+.tabs button.selected {
+  color: var(--green);
+  border-color: var(--green);
+  font-weight: 600;
+}
+.permissions-table th:not(:first-child),
+.permissions-table td {
+  text-align: center;
+}
+.permissions-table input {
+  cursor: pointer;
+}

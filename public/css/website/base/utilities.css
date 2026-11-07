@@ -1,0 +1,4 @@
+.wrap {
+  width: min(1180px, calc(100% - 64px));
+  margin: auto;
+}

@@ -1,0 +1,30 @@
+.contact {
+  background: #f7f9f7;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+}
+.contact-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 40px;
+}
+.contact-item {
+  display: flex;
+  gap: 15px;
+}
+.contact-item .icon {
+  color: var(--green);
+  margin-top: 6px;
+}
+.contact-item small {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+}
+.contact-item b {
+  font-size: 15px;
+  font-weight: 500;
+}

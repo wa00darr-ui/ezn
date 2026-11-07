@@ -1,0 +1,77 @@
+.report-filter form {
+  padding: 0;
+}
+.report-filter .tabs {
+  padding: 4px 20px 0;
+}
+.report-filter .filters {
+  padding-top: 0;
+}
+.line-chart {
+  padding: 0 23px 23px;
+  direction: ltr;
+}
+.line-chart svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+.chart-grid {
+  stroke: #e9eee8;
+  stroke-width: 1;
+  fill: none;
+}
+.chart-line {
+  stroke: var(--green);
+  stroke-width: 3;
+  fill: none;
+}
+.chart-area {
+  fill: #f0f5e8;
+}
+.chart-dots {
+  fill: white;
+  stroke: var(--green);
+  stroke-width: 2;
+}
+.chart-labels {
+  font: 11px Tahoma;
+  fill: #8a998e;
+  text-anchor: middle;
+}
+.rank-bars {
+  padding: 0 23px 26px;
+}
+.rank-bars > div {
+  margin-bottom: 17px;
+  background: linear-gradient(0deg, #f2f5ee 7px, transparent 7px);
+  border-radius: 4px;
+}
+.rank-bars span {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.rank-bars b {
+  color: var(--muted);
+  font-size: 11px;
+}
+.rank-bars i {
+  height: 7px;
+  background: #729679;
+  display: block;
+  border-radius: 4px;
+}
+.w90 {
+  width: 90%;
+}
+.w50 {
+  width: 50%;
+}
+.w40 {
+  width: 40%;
+}
+.w20 {
+  width: 20%;
+}

@@ -1,0 +1,26 @@
+.contact-message {
+  max-width: 860px;
+}
+.contact-success {
+  text-align: center;
+  padding: 42px 24px;
+}
+.contact-success .circle {
+  margin: 0 auto 16px;
+  width: 56px;
+  height: 56px;
+}
+.contact-success .btn {
+  margin-top: 12px;
+}
+#contact-form button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+}
+#contact-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* Static HTML first; enhance only step visibility when JavaScript is active. */

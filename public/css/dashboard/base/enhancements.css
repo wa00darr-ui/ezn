@@ -1,0 +1,51 @@
+.record-picker {
+  max-width: 360px;
+  margin-bottom: 18px;
+}
+.record-picker select {
+  background: white;
+}
+.tabs + section {
+  min-width: 0;
+}
+.sidebar nav {
+  scrollbar-width: thin;
+  scrollbar-color: #577c67 transparent;
+}
+.sidebar nav::-webkit-scrollbar {
+  width: 4px;
+}
+.sidebar nav::-webkit-scrollbar-thumb {
+  background: #577c67;
+  border-radius: 4px;
+}
+.sidebar nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+.highlight-row {
+  background: #f4f8e8;
+}
+.preview-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+.preview-social {
+  color: var(--green);
+  overflow-wrap: anywhere;
+}
+.sidebar-close {
+  display: none;
+  color: #e1eae5;
+  position: absolute;
+  top: 28px;
+  left: 14px;
+}
+@media (max-width: 1000px) {
+  .sidebar-close {
+    display: inline-grid;
+  }
+  .sidebar .brand {
+    padding-inline-end: 35px;
+  }
+}

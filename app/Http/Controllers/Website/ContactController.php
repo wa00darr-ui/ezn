@@ -6,43 +6,29 @@ use App\Http\Controllers\Controller;
 use App\Models\ContactMessage;
 use App\Models\SchoolSetting;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Http\Requests\Website\ContactStoreRequest;
+use App\Services\Website\ContactMessageService;
 
 class ContactController extends Controller
 {
+    protected $contactMessageService;
+    public function __construct(ContactMessageService $contactMessageService)
+    {
+        $this->contactMessageService = $contactMessageService;
+    }
+
+
     public function index(): View
     {
-        $school = SchoolSetting::query()->find(1);
+        $school = $this->contactMessageService->index();
 
         return view('website.contact', compact('school'));
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(ContactStoreRequest $request): RedirectResponse
     {
-        $data = $request->validate([
-            'name' => ['required', 'string', 'max:100'],
-
-            'phone' => [
-                'required',
-                'regex:/^05[0-9]{8}$/',
-            ],
-
-            'subject' => ['required', 'string', 'max:120'],
-
-            'message' => ['required', 'string', 'max:2000'],
-        ], [
-            'name.required' => 'يرجى إدخال الاسم بالكامل.',
-            'phone.required' => 'يرجى إدخال رقم الجوال.',
-            'phone.regex' => 'يجب أن يبدأ الجوال بـ 05 ويتكون من 10 أرقام.',
-            'subject.required' => 'يرجى إدخال موضوع الرسالة.',
-            'message.required' => 'يرجى كتابة نص الرسالة.',
-        ]);
-
-        ContactMessage::create([
-            ...$data,
-            'status' => 'new',
-        ]);
+        $this->contactMessageService->store($request->validated());
 
         return redirect()
             ->route('website.contact')

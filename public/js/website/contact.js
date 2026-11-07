@@ -1,62 +1,40 @@
-import { one, all } from "./dom.js";
-import { normalizeDigits, isPhone, clearError, error } from "./validation.js";
-import { toast } from "./feedback.js";
+import { normalizeDigits } from "./validation.js";
 
 export function initializeContact() {
-  const form = one("#contact-form"),
-    success = one("#contact-success");
-  const button = one('button[type="submit"]', form);
-  button.disabled = false;
-  const controls = all("input, textarea", form);
-  function contactBusy(busy) {
-    form.setAttribute("aria-busy", String(busy));
-    button.disabled = busy;
-    controls.forEach(function (input) {
-      input.disabled = busy;
+    const form = document.getElementById("contact-form");
+    if (!form) return;
+
+    const button = form.querySelector('button[type="submit"]');
+    const phone = form.querySelector('[name="phone"]');
+    const label = button?.textContent;
+    let submitting = false;
+
+    phone?.addEventListener("input", () => {
+        phone.value = normalizeDigits(phone.value);
     });
-    one("[data-contact-idle]").hidden = busy;
-    one("[data-contact-busy]").hidden = !busy;
-  }
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    if (button.disabled) return;
-    let valid = true;
-    controls.forEach(function (input) {
-      clearError(input.id);
-      if (!input.value.trim()) {
-        error(input.id, "required");
-        valid = false;
-      } else if (input.maxLength > 0 && input.value.length > input.maxLength) {
-        error(input.id, "length");
-        valid = false;
-      }
+
+    form.addEventListener("submit", (event) => {
+        if (submitting) {
+            event.preventDefault();
+            return;
+        }
+
+        // إرسال النموذج إلى Laravel؛ تظهر رسالة النجاح بعد الحفظ الفعلي.
+        submitting = true;
+        form.setAttribute("aria-busy", "true");
+        if (button) {
+            button.disabled = true;
+            button.textContent = "جارٍ إرسال الرسالة…";
+        }
     });
-    const phone = one("#contact-phone");
-    phone.value = normalizeDigits(phone.value);
-    if (phone.value && !isPhone(phone.value)) {
-      error(phone.id, "phone");
-      valid = false;
-    }
-    if (!valid) {
-      one('[aria-invalid="true"]', form)?.focus();
-      return;
-    }
-    contactBusy(true);
-    setTimeout(function () {
-      contactBusy(false);
-      form.hidden = true;
-      success.hidden = false;
-      success.focus();
-      toast("contact");
-    }, 800);
-  });
-  one('[data-action="contact-new"]').addEventListener("click", function () {
-    form.reset();
-    controls.forEach(function (input) {
-      clearError(input.id);
+
+    // إعادة تفعيل النموذج عند الرجوع إليه من سجل المتصفح.
+    window.addEventListener("pageshow", () => {
+        submitting = false;
+        form.removeAttribute("aria-busy");
+        if (button) {
+            button.disabled = false;
+            button.textContent = label;
+        }
     });
-    form.hidden = false;
-    success.hidden = true;
-    one("#contact-name").focus();
-  });
 }

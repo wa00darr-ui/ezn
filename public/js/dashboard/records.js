@@ -13,9 +13,9 @@ export function initializeRecords() {
       const value = option.dataset[element.dataset.record];
       if (value !== undefined) element.textContent = value;
     });
-    all("[data-request-number]").forEach((element) => {
-      element.textContent = option.value;
-    });
+    // all("[data-request-number]").forEach((element) => {
+    //   element.textContent = option.value;
+    // });
     if (recordPicker.dataset.recordPicker === "student") {
       all("[data-profile-history]").forEach((row) => {
         row.hidden = row.dataset.profileHistory !== option.value;

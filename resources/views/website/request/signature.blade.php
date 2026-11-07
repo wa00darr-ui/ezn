@@ -26,7 +26,14 @@
                     role="img"
                     aria-label="مساحة التوقيع باللمس أو الفأرة"
                   ></canvas
-                  ><small class="muted"
+                  >
+                  <input
+                  type="hidden"
+                  id="signature-data"
+                  name="signature"
+                >
+
+                  <small class="muted"
                     >وقّع بإصبعك أو باستخدام الفأرة داخل المساحة أعلاه.</small
                   >
                   <div class="signature-alternative">

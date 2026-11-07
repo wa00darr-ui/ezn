@@ -87,6 +87,7 @@
     <!-- JavaScript الرئيسي للموقع -->
     <script
         src="{{ asset('js/website/website.js') }}"
+        type="module"
         defer
     ></script>
 
@@ -101,10 +102,6 @@
             ></script>
 
             <!-- التوقيع الإلكتروني -->
-            <script
-                src="{{ asset('js/website/signature.js') }}"
-                defer
-            ></script>
 
             <!-- مراجعة بيانات الطلب -->
             <script

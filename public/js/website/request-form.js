@@ -913,7 +913,10 @@ export function initializeRequest() {
     function submitToLaravel() {
         if (sending) return;
 
-        if (!validateAllSteps()) return;
+        if (!validateAllSteps()) {
+            dialog?.close();
+            return;
+        }
 
         if (!form.action) {
             alert(
@@ -924,6 +927,11 @@ export function initializeRequest() {
         }
 
         sending = true;
+        if (confirmationButton) {
+            confirmationButton.disabled = true;
+            confirmationButton.querySelector("[data-submit-idle]").hidden = true;
+            confirmationButton.querySelector("[data-submit-busy]").hidden = false;
+        }
 
         // يجب أن يكون POST /request مفعّلًا في Laravel.
         // لا نخزّن طلبات وهمية في المتصفح.
@@ -945,6 +953,15 @@ export function initializeRequest() {
             submitToLaravel();
         }
     );
+
+    window.addEventListener("pageshow", () => {
+        sending = false;
+        if (confirmationButton) {
+            confirmationButton.disabled = false;
+            confirmationButton.querySelector("[data-submit-idle]").hidden = false;
+            confirmationButton.querySelector("[data-submit-busy]").hidden = true;
+        }
+    });
 
     // منع إرسال النموذج من خطوة غير مكتملة
     form.addEventListener(
@@ -978,9 +995,7 @@ export function initializeRequest() {
     |--------------------------------------------------------------------------
     */
 
-    const serverErrors = form.querySelector(
-        '[data-server-errors="true"]'
-    );
+    const serverErrors = get("server-errors");
 
     if (serverErrors) {
         const errorStep = Number(

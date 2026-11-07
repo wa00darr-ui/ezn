@@ -20,6 +20,7 @@ use App\Http\Controllers\Dashboard\HistoryController;
 use App\Http\Controllers\Dashboard\RequestsController;
 use App\Http\Controllers\Dashboard\SettingsController;
 use App\Http\Controllers\Dashboard\StudentController;
+use App\Http\Controllers\Website\TrackingRequestController;
 
 
 /*
@@ -47,12 +48,42 @@ Route::get('/about', function () {
     return view('website.about');
 })->name('website.about');
 
+/*
+|--------------------------------------------------------------------------
+| طلبات الاستئذان
+|--------------------------------------------------------------------------
+*/
+
+// عرض نموذج طلب الاستئذان
+Route::get('/tracking', [
+    TrackingRequestController::class,
+    'index',
+])->name('website.tracking.index');
+
+// البحث عن طلبات الاستئذان الحقيقية
+Route::post('/tracking', [
+    TrackingRequestController::class,
+    'lookup',
+])->middleware('throttle:10,1')->name('website.tracking.lookup');
+
 
 // عرض نموذج طلب الاستئذان
 Route::get('/request', [
     RequestController::class,
     'create',
 ])->name('website.request.create');
+
+Route::post('/request', [
+    RequestController::class,
+    'store',
+])->name('website.request.store');
+
+// تأكيد إرسال الطلب وعرض رقمه
+Route::get('/request/success', [
+    RequestController::class,
+    'success',
+])->name('website.request.success');
+
 
 
 // عرض صفحة التواصل

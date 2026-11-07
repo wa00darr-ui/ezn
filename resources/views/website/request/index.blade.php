@@ -147,7 +147,7 @@
                 id="request-form"
                 class="form-card"
                 method="POST"
-                action="{{ url('/request') }}"
+                action="{{ route('website.request.store') }}"
                 enctype="multipart/form-data"
                 novalidate
             >
@@ -265,86 +265,3 @@
 </dialog>
 
 @endsection
-
-@push('scripts')
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-
-    const form = document.getElementById('request-form');
-    const dialog = document.getElementById('submit-dialog');
-    const confirmButton = document.getElementById(
-        'confirm-request-submit'
-    );
-
-    if (!form || !dialog || !confirmButton) {
-        return;
-    }
-
-    let submitting = false;
-
-    confirmButton.addEventListener('click', function () {
-
-        if (submitting) {
-            return;
-        }
-
-        // التحقق من الحقول المطلوبة في جميع الخطوات
-        if (!form.checkValidity()) {
-            dialog.close();
-
-            const invalidField = form.querySelector(':invalid');
-
-            if (invalidField) {
-                const step = invalidField.closest('.request-step');
-
-                if (step) {
-                    // العودة للخطوة التي تحتوي على الخطأ
-                    const stepNumber = Number(step.dataset.step);
-
-                    if (
-                        window.requestFormGoToStep &&
-                        typeof window.requestFormGoToStep === 'function'
-                    ) {
-                        window.requestFormGoToStep(stepNumber);
-                    }
-                }
-
-                setTimeout(() => {
-                    invalidField.focus();
-                    invalidField.reportValidity();
-                }, 0);
-            }
-
-            return;
-        }
-
-        submitting = true;
-        confirmButton.disabled = true;
-
-        const idle = confirmButton.querySelector(
-            '[data-submit-idle]'
-        );
-
-        const busy = confirmButton.querySelector(
-            '[data-submit-busy]'
-        );
-
-        if (idle) idle.hidden = true;
-        if (busy) busy.hidden = false;
-
-        // الإرسال إلى Laravel
-        HTMLFormElement.prototype.submit.call(form);
-    });
-
-    dialog.querySelectorAll('[data-close-dialog]')
-        .forEach(function (button) {
-            button.addEventListener('click', function () {
-                dialog.close();
-            });
-        });
-
-});
-</script>
-
-@endpush
